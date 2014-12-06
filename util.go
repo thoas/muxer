@@ -1,4 +1,4 @@
-package server
+package muxer
 
 import (
 	"net/http"
