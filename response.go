@@ -45,6 +45,11 @@ func (r *Response) NotFound(message string) {
 	r.Abort(404, message)
 }
 
+// NotFound writes a 200 HTTP response
+func (r *Response) Ok(message string) {
+	r.Abort(200, message)
+}
+
 //Unauthorized writes a 401 HTTP response
 func (r *Response) Unauthorized() {
 	r.ResponseWriter.WriteHeader(401)
