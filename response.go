@@ -100,3 +100,11 @@ func (r *Response) SetHeader(hdr string, val string, unique bool) {
 		r.Header().Add(hdr, val)
 	}
 }
+
+// SetHeaders sets response headers. If `unique` is true, the current value
+// of that header will be overwritten . If false, it will be appended.
+func (r *Response) SetHeaders(headers map[string]string, unique bool) {
+	for k, v := range headers {
+		r.SetHeader(k, v, unique)
+	}
+}
