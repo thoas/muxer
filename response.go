@@ -10,6 +10,10 @@ type Response struct {
 	http.ResponseWriter
 }
 
+func NewResponse(res http.ResponseWriter) Response {
+	return Response{res}
+}
+
 // WriteString writes string data into the response object.
 func (r *Response) WriteString(content string) {
 	r.ResponseWriter.Write([]byte(content))
